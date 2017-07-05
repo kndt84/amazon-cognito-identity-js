@@ -293,7 +293,7 @@ module.exports = class CognitoUser {
       DeviceKey: newDeviceMetadata.DeviceKey,
       AccessToken: this.signInUserSession.getAccessToken().getJwtToken(),
       DeviceSecretVerifierConfig: deviceSecretVerifierConfig,
-      DeviceName: navigator.userAgent,
+      DeviceName: 'nodejs-https/amazon-cognito-identity-js-node',
     }, (errConfirm, dataConfirm) => {
       if (errConfirm) {
         return callback.onFailure(errConfirm);
@@ -552,7 +552,7 @@ module.exports = class CognitoUser {
         DeviceKey: dataAuthenticate.AuthenticationResult.NewDeviceMetadata.DeviceKey,
         AccessToken: this.signInUserSession.getAccessToken().getJwtToken(),
         DeviceSecretVerifierConfig: deviceSecretVerifierConfig,
-        DeviceName: navigator.userAgent,
+        DeviceName: 'nodejs-https/amazon-cognito-identity-js-node',
       }, (errConfirm, dataConfirm) => {
         if (errConfirm) {
           return callback.onFailure(errConfirm);
