@@ -1,6 +1,12 @@
 # Amazon Cognito Identity SDK for JavaScript for Node.js
 
-This module is a fork of [amazon-cognito-identity-js](https://github.com/aws/amazon-cognito-identity-js) and applicable to Node.js
+This module was originally a forked from [amazon-cognito-identity-js](https://github.com/aws/amazon-cognito-identity-js) to [amazon-cognito-identity-js-node](https://github.com/kndt84/amazon-cognito-identity-js). I have since forked it again as the owner of the fork does not seem to be accepting pull requests.
+
+I made updates to the codebase to sent a mock User Agent string in the HTTPS Requests, failure to do this causes errors like this: 
+```shell
+ReferenceError: navigator is not defined
+    at CognitoUser.authenticateUserInternal (node_modules/amazon-cognito-identity-js/lib/CognitoUser.js:343:19)
+```
 
 ## Install
 ```sh
